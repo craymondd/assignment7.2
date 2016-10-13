@@ -16,13 +16,15 @@ fh = open(fname)
 count = 0
 for line in fh:
 	if not line.startswith("X-DSPAM-Confidence:") : continue
-for x in line:
+	numlist = float(line [20:].strip())
+	print numlist
 	count = count +1
-#	print 'Line Count:', count
+	avg = numlist/count
+print 'Average: ', avg
 
 
 
 
 
-print 'Done'
+
 
